@@ -1,0 +1,7 @@
+---
+- name: install everything for home
+  hosts: localhost
+  gather_facts: no
+  roles:
+  - general_settings
+  - pre-nvim
