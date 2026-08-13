@@ -6,9 +6,9 @@ Welcome to the central orchestrator of my automated development environment. Thi
 
 To maintain a strict separation of concerns, this infrastructure is split across three distinct repositories:
 
-1. **`install-home` (The Orchestrator):** This repository. It contains the initial `bootstrap.sh` script and the master Ansible runner (`playbook/run.sh` and `playbook/install_home.yml`)[cite: 3].
-2. **`.dotfiles` (The Configuration):** Contains all personal user configurations (`zsh`, `tmux`, `nvim`, `awesomewm`) managed seamlessly via GNU Stow.
-3. **`ansible` (The Software):** Contains the modular Ansible roles (like `general_settings` and `pre-nvim`) that handle OS-level package management, Rust/Cargo toolchains, and compiling software from source.
+1. **[`install-home`](https://github.com/talife/install-home) (The Orchestrator):** This repository. It contains the initial `bootstrap.sh` script and the master Ansible runner (`playbook/run.sh` and `playbook/install_home.yml`)[cite: 3].
+2. **[`.dotfiles`](https://github.com/talife/.dotfiles) (The Configuration):** Contains all personal user configurations (`zsh`, `tmux`, `nvim`, `awesomewm`) managed seamlessly via GNU Stow.
+3. **[`ansible`](https://github.com/talife/ansible) (The Software):** Contains the modular Ansible roles (like `general_settings` and `pre-nvim`) that handle OS-level package management, Rust/Cargo toolchains, and compiling software from source.
 
 ---
 
@@ -17,4 +17,4 @@ To maintain a strict separation of concerns, this infrastructure is split across
 To provision a brand new, Day-0 machine (Ubuntu Native or WSL), open a terminal and run:
 
 ```bash
-curl -sL [https://raw.githubusercontent.com/talife/install-home/main/bootstrap.sh](https://raw.githubusercontent.com/talife/install-home/main/bootstrap.sh) | bash
+bash -c "$(curl -sL https://raw.githubusercontent.com/talife/install-home/main/bootstrap.sh)"
