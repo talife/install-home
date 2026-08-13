@@ -53,9 +53,9 @@ main() {
     if [ ! -f /usr/local/bin/wslview ]; then
         echo "🌐 Creating lightweight native Windows browser wrappers..."
         sudo tee /usr/local/bin/wslview > /dev/null << 'EOF'
-    #!/bin/sh
-    exec cmd.exe /c start "$@"
-    EOF
+#!/bin/sh
+exec cmd.exe /c start "$@"
+EOF
         sudo chmod +x /usr/local/bin/wslview
 
         # Symlink standard Linux browser openers directly to our Windows forwarder
